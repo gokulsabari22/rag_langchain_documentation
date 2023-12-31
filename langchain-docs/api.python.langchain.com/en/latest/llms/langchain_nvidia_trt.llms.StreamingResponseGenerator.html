@@ -1,0 +1,357 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  
+  <title>langchain_nvidia_trt.llms.StreamingResponseGenerator &mdash; 🦜🔗 LangChain 0.0.353</title>
+  
+  <link rel="canonical" href="https://api.python.langchain.com/en/latest/llms/langchain_nvidia_trt.llms.StreamingResponseGenerator.html" />
+
+  
+
+  <link rel="stylesheet" href="../_static/css/vendor/bootstrap.min.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/autodoc_pydantic.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+<script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+<script src="../_static/jquery.js"></script> 
+<script async type="text/javascript" src="/_/static/javascript/readthedocs-addons.js"></script><meta name="readthedocs-project-slug" content="langchain" /><meta name="readthedocs-version-slug" content="latest" /></head>
+<body>
+
+
+<nav id="navbar" class="sk-docs-navbar navbar navbar-expand-md navbar-light bg-light py-0">
+  <div class="container-fluid sk-docs-container px-0">
+    <button
+      id="sk-navbar-toggler"
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="sk-navbar-collapse collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="sk-nav-link nav-link" href="../langchain_api_reference.html">LangChain</a>
+        </li>
+        <li class="nav-item">
+          <a class="sk-nav-link nav-link" href="../core_api_reference.html">Core</a>
+        </li>
+        <li class="nav-item">
+          <a class="sk-nav-link nav-link" href="../community_api_reference.html">Community</a>
+        </li>
+        <li class="nav-item">
+          <a class="sk-nav-link nav-link" href="../experimental_api_reference.html">Experimental</a>
+        </li>
+        <li class="nav-item">
+          <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../google_genai_api_reference.html">google-genai</a>
+        </li>
+        <li class="nav-item">
+          <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../anthropic_api_reference.html">anthropic</a>
+        </li>
+        <li class="nav-item">
+          <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../nvidia_trt_api_reference.html">nvidia-trt</a>
+        </li>
+        <li class="nav-item">
+          <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../mistralai_api_reference.html">mistralai</a>
+        </li>
+        <li class="nav-item">
+          <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../together_api_reference.html">together</a>
+        </li>
+        <li class="nav-item">
+          <a class="sk-nav-link nav-link nav-more-item-mobile-items" href="../nvidia_ai_endpoints_api_reference.html">nvidia-ai-endpoints</a>
+        </li>
+        <li class="nav-item dropdown nav-more-item-dropdown">
+          <a class="sk-nav-link nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Partner libs</a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="sk-nav-dropdown-item dropdown-item" href="../google_genai_api_reference.html">google-genai</a>
+              <a class="sk-nav-dropdown-item dropdown-item" href="../anthropic_api_reference.html">anthropic</a>
+              <a class="sk-nav-dropdown-item dropdown-item" href="../nvidia_trt_api_reference.html">nvidia-trt</a>
+              <a class="sk-nav-dropdown-item dropdown-item" href="../mistralai_api_reference.html">mistralai</a>
+              <a class="sk-nav-dropdown-item dropdown-item" href="../together_api_reference.html">together</a>
+              <a class="sk-nav-dropdown-item dropdown-item" href="../nvidia_ai_endpoints_api_reference.html">nvidia-ai-endpoints</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="sk-nav-link nav-link" target="_blank" rel="noopener noreferrer" href="https://python.langchain.com/">Docs</a>
+        </li>
+      </ul>
+      <div id="searchbox" role="search">
+          <div class="searchformwrapper">
+          <form class="search" action="../search.html" method="get">
+            <input class="sk-search-text-input" type="text" name="q" aria-labelledby="searchlabel" />
+            <input class="sk-search-text-btn" type="submit" value="Go" />
+          </form>
+          </div>
+      </div>
+    </div>
+  </div>
+</nav>
+<div class="d-flex" id="sk-doc-wrapper">
+    <input type="checkbox" name="sk-toggle-checkbox" id="sk-toggle-checkbox">
+    <label id="sk-sidemenu-toggle" class="sk-btn-toggle-toc btn sk-btn-primary" for="sk-toggle-checkbox">Toggle Menu</label>
+    <div id="sk-sidebar-wrapper" class="border-right">
+      <div class="sk-sidebar-toc-wrapper">
+        <div class="btn-group w-100 mb-2" role="group" aria-label="rellinks">
+            <a href="#" role="button" class="btn sk-btn-rellink py-1 disabled"">Prev</a>
+            <a href="#" role="button" class="btn sk-btn-rellink disabled py-1">Up</a>
+            <a href="#" role="button" class="btn sk-btn-rellink py-1 disabled"">Next</a>
+        </div>
+            <div class="sk-sidebar-toc">
+              <ul>
+<li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">langchain_nvidia_trt.llms</span></code>.StreamingResponseGenerator</a></li>
+</ul>
+
+            </div>
+      </div>
+    </div>
+    <div id="sk-page-content-wrapper">
+      <div class="sk-page-content container-fluid body px-md-3" role="main">
+        
+  <section id="langchain-nvidia-trt-llms-streamingresponsegenerator">
+<h1><a class="reference internal" href="../nvidia_trt_api_reference.html#module-langchain_nvidia_trt.llms" title="langchain_nvidia_trt.llms"><code class="xref py py-mod docutils literal notranslate"><span class="pre">langchain_nvidia_trt.llms</span></code></a>.StreamingResponseGenerator<a class="headerlink" href="#langchain-nvidia-trt-llms-streamingresponsegenerator" title="Permalink to this headline">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="langchain_nvidia_trt.llms.StreamingResponseGenerator">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">langchain_nvidia_trt.llms.</span></span><span class="sig-name descname"><span class="pre">StreamingResponseGenerator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">client</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">InferenceServerClient</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">request_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">force_batch</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stop_words</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Sequence</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/langchain_nvidia_trt/llms.html#StreamingResponseGenerator"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#langchain_nvidia_trt.llms.StreamingResponseGenerator" title="Permalink to this definition">¶</a></dt>
+<dd><p>A Generator that provides the inference results from an LLM.</p>
+<p>Instantiate the generator class.</p>
+<p class="rubric">Methods</p>
+<table class="autosummary longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#langchain_nvidia_trt.llms.StreamingResponseGenerator.__init__" title="langchain_nvidia_trt.llms.StreamingResponseGenerator.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a>(client, request_id, force_batch, ...)</p></td>
+<td><p>Instantiate the generator class.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#langchain_nvidia_trt.llms.StreamingResponseGenerator.empty" title="langchain_nvidia_trt.llms.StreamingResponseGenerator.empty"><code class="xref py py-obj docutils literal notranslate"><span class="pre">empty</span></code></a>()</p></td>
+<td><p>Return True if the queue is empty, False otherwise (not reliable!).</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#langchain_nvidia_trt.llms.StreamingResponseGenerator.full" title="langchain_nvidia_trt.llms.StreamingResponseGenerator.full"><code class="xref py py-obj docutils literal notranslate"><span class="pre">full</span></code></a>()</p></td>
+<td><p>Return True if the queue is full, False otherwise (not reliable!).</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#langchain_nvidia_trt.llms.StreamingResponseGenerator.get" title="langchain_nvidia_trt.llms.StreamingResponseGenerator.get"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get</span></code></a>([block, timeout])</p></td>
+<td><p>Remove and return an item from the queue.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#langchain_nvidia_trt.llms.StreamingResponseGenerator.get_nowait" title="langchain_nvidia_trt.llms.StreamingResponseGenerator.get_nowait"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_nowait</span></code></a>()</p></td>
+<td><p>Remove and return an item from the queue without blocking.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#langchain_nvidia_trt.llms.StreamingResponseGenerator.join" title="langchain_nvidia_trt.llms.StreamingResponseGenerator.join"><code class="xref py py-obj docutils literal notranslate"><span class="pre">join</span></code></a>()</p></td>
+<td><p>Blocks until all items in the Queue have been gotten and processed.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#langchain_nvidia_trt.llms.StreamingResponseGenerator.put" title="langchain_nvidia_trt.llms.StreamingResponseGenerator.put"><code class="xref py py-obj docutils literal notranslate"><span class="pre">put</span></code></a>(item[, block, timeout])</p></td>
+<td><p>Put an item into the queue.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#langchain_nvidia_trt.llms.StreamingResponseGenerator.put_nowait" title="langchain_nvidia_trt.llms.StreamingResponseGenerator.put_nowait"><code class="xref py py-obj docutils literal notranslate"><span class="pre">put_nowait</span></code></a>(item)</p></td>
+<td><p>Put an item into the queue without blocking.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#langchain_nvidia_trt.llms.StreamingResponseGenerator.qsize" title="langchain_nvidia_trt.llms.StreamingResponseGenerator.qsize"><code class="xref py py-obj docutils literal notranslate"><span class="pre">qsize</span></code></a>()</p></td>
+<td><p>Return the approximate size of the queue (not reliable!).</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#langchain_nvidia_trt.llms.StreamingResponseGenerator.task_done" title="langchain_nvidia_trt.llms.StreamingResponseGenerator.task_done"><code class="xref py py-obj docutils literal notranslate"><span class="pre">task_done</span></code></a>()</p></td>
+<td><p>Indicate that a formerly enqueued task is complete.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py method">
+<dt class="sig sig-object py" id="langchain_nvidia_trt.llms.StreamingResponseGenerator.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">client</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">InferenceServerClient</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">request_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">force_batch</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stop_words</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Sequence</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../_modules/langchain_nvidia_trt/llms.html#StreamingResponseGenerator.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#langchain_nvidia_trt.llms.StreamingResponseGenerator.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Instantiate the generator class.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="langchain_nvidia_trt.llms.StreamingResponseGenerator.empty">
+<span class="sig-name descname"><span class="pre">empty</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#langchain_nvidia_trt.llms.StreamingResponseGenerator.empty" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return True if the queue is empty, False otherwise (not reliable!).</p>
+<p>This method is likely to be removed at some point.  Use qsize() == 0
+as a direct substitute, but be aware that either approach risks a race
+condition where a queue can grow before the result of empty() or
+qsize() can be used.</p>
+<p>To create code that needs to wait for all queued tasks to be
+completed, the preferred technique is to use the join() method.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="langchain_nvidia_trt.llms.StreamingResponseGenerator.full">
+<span class="sig-name descname"><span class="pre">full</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#langchain_nvidia_trt.llms.StreamingResponseGenerator.full" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return True if the queue is full, False otherwise (not reliable!).</p>
+<p>This method is likely to be removed at some point.  Use qsize() &gt;= n
+as a direct substitute, but be aware that either approach risks a race
+condition where a queue can shrink before the result of full() or
+qsize() can be used.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="langchain_nvidia_trt.llms.StreamingResponseGenerator.get">
+<span class="sig-name descname"><span class="pre">get</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">block</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#langchain_nvidia_trt.llms.StreamingResponseGenerator.get" title="Permalink to this definition">¶</a></dt>
+<dd><p>Remove and return an item from the queue.</p>
+<p>If optional args ‘block’ is true and ‘timeout’ is None (the default),
+block if necessary until an item is available. If ‘timeout’ is
+a non-negative number, it blocks at most ‘timeout’ seconds and raises
+the Empty exception if no item was available within that time.
+Otherwise (‘block’ is false), return an item if one is immediately
+available, else raise the Empty exception (‘timeout’ is ignored
+in that case).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="langchain_nvidia_trt.llms.StreamingResponseGenerator.get_nowait">
+<span class="sig-name descname"><span class="pre">get_nowait</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#langchain_nvidia_trt.llms.StreamingResponseGenerator.get_nowait" title="Permalink to this definition">¶</a></dt>
+<dd><p>Remove and return an item from the queue without blocking.</p>
+<p>Only get an item if one is immediately available. Otherwise
+raise the Empty exception.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="langchain_nvidia_trt.llms.StreamingResponseGenerator.join">
+<span class="sig-name descname"><span class="pre">join</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#langchain_nvidia_trt.llms.StreamingResponseGenerator.join" title="Permalink to this definition">¶</a></dt>
+<dd><p>Blocks until all items in the Queue have been gotten and processed.</p>
+<p>The count of unfinished tasks goes up whenever an item is added to the
+queue. The count goes down whenever a consumer thread calls task_done()
+to indicate the item was retrieved and all work on it is complete.</p>
+<p>When the count of unfinished tasks drops to zero, join() unblocks.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="langchain_nvidia_trt.llms.StreamingResponseGenerator.put">
+<span class="sig-name descname"><span class="pre">put</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">item</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">block</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#langchain_nvidia_trt.llms.StreamingResponseGenerator.put" title="Permalink to this definition">¶</a></dt>
+<dd><p>Put an item into the queue.</p>
+<p>If optional args ‘block’ is true and ‘timeout’ is None (the default),
+block if necessary until a free slot is available. If ‘timeout’ is
+a non-negative number, it blocks at most ‘timeout’ seconds and raises
+the Full exception if no free slot was available within that time.
+Otherwise (‘block’ is false), put an item on the queue if a free slot
+is immediately available, else raise the Full exception (‘timeout’
+is ignored in that case).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="langchain_nvidia_trt.llms.StreamingResponseGenerator.put_nowait">
+<span class="sig-name descname"><span class="pre">put_nowait</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">item</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#langchain_nvidia_trt.llms.StreamingResponseGenerator.put_nowait" title="Permalink to this definition">¶</a></dt>
+<dd><p>Put an item into the queue without blocking.</p>
+<p>Only enqueue the item if a free slot is immediately available.
+Otherwise raise the Full exception.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="langchain_nvidia_trt.llms.StreamingResponseGenerator.qsize">
+<span class="sig-name descname"><span class="pre">qsize</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#langchain_nvidia_trt.llms.StreamingResponseGenerator.qsize" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the approximate size of the queue (not reliable!).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="langchain_nvidia_trt.llms.StreamingResponseGenerator.task_done">
+<span class="sig-name descname"><span class="pre">task_done</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#langchain_nvidia_trt.llms.StreamingResponseGenerator.task_done" title="Permalink to this definition">¶</a></dt>
+<dd><p>Indicate that a formerly enqueued task is complete.</p>
+<p>Used by Queue consumer threads.  For each get() used to fetch a task,
+a subsequent call to task_done() tells the queue that the processing
+on the task is complete.</p>
+<p>If a join() is currently blocking, it will resume when all items
+have been processed (meaning that a task_done() call was received
+for every item that had been put() into the queue).</p>
+<p>Raises a ValueError if called more times than there were items
+placed in the queue.</p>
+</dd></dl>
+
+</dd></dl>
+
+<ul class="simple">
+</ul>
+</section>
+
+
+      </div>
+    <div class="container">
+      <footer class="sk-content-footer">
+            &copy; 2023, LangChain, Inc..
+          Last updated on Dec 31, 2023.
+          <a href="../_sources/llms/langchain_nvidia_trt.llms.StreamingResponseGenerator.rst.txt" rel="nofollow">Show this page source</a>
+      </footer>
+    </div>
+  </div>
+</div>
+<script src="../_static/js/vendor/bootstrap.min.js"></script>
+<script>
+$(document).ready(function() {
+    /* Add a [>>>] button on the top-right corner of code samples to hide
+     * the >>> and ... prompts and the output and thus make the code
+     * copyable. */
+    var div = $('.highlight-python .highlight,' +
+                '.highlight-python3 .highlight,' +
+                '.highlight-pycon .highlight,' +
+		'.highlight-default .highlight')
+    var pre = div.find('pre');
+
+    // get the styles from the current theme
+    pre.parent().parent().css('position', 'relative');
+    var hide_text = 'Hide prompts and outputs';
+    var show_text = 'Show prompts and outputs';
+
+    // create and add the button to all the code blocks that contain >>>
+    div.each(function(index) {
+        var jthis = $(this);
+        if (jthis.find('.gp').length > 0) {
+            var button = $('<span class="copybutton">&gt;&gt;&gt;</span>');
+            button.attr('title', hide_text);
+            button.data('hidden', 'false');
+            jthis.prepend(button);
+        }
+        // tracebacks (.gt) contain bare text elements that need to be
+        // wrapped in a span to work with .nextUntil() (see later)
+        jthis.find('pre:has(.gt)').contents().filter(function() {
+            return ((this.nodeType == 3) && (this.data.trim().length > 0));
+        }).wrap('<span>');
+    });
+
+    // define the behavior of the button when it's clicked
+    $('.copybutton').click(function(e){
+        e.preventDefault();
+        var button = $(this);
+        if (button.data('hidden') === 'false') {
+            // hide the code output
+            button.parent().find('.go, .gp, .gt').hide();
+            button.next('pre').find('.gt').nextUntil('.gp, .go').css('visibility', 'hidden');
+            button.css('text-decoration', 'line-through');
+            button.attr('title', show_text);
+            button.data('hidden', 'true');
+        } else {
+            // show the code output
+            button.parent().find('.go, .gp, .gt').show();
+            button.next('pre').find('.gt').nextUntil('.gp, .go').css('visibility', 'visible');
+            button.css('text-decoration', 'none');
+            button.attr('title', hide_text);
+            button.data('hidden', 'false');
+        }
+    });
+
+	/*** Add permalink buttons next to glossary terms ***/
+	$('dl.glossary > dt[id]').append(function() {
+		return ('<a class="headerlink" href="#' +
+			    this.getAttribute('id') +
+			    '" title="Permalink to this term">¶</a>');
+	});
+});
+
+</script>
+    
+</body>
+</html>
